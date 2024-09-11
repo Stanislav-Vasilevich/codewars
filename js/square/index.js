@@ -2,6 +2,6 @@
 // Теперь вам нужно написать функцию, которая принимает аргумент и возвращает его квадрат.
 
 export function square(arg) {
-  if (typeof arg !== "number") return;
+  if (typeof arg !== "number") return 'Передайте в качестве аргумента число!';
   return Math.pow(arg, 2);
 }
