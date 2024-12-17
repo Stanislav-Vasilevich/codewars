@@ -1,11 +1,12 @@
-function expandedForm(num) {
-  const result = ('' + num).split('').reduce(function (sum, val) {
-    return sum + +val
-  }, 0)
+/*
+Панграмма — это предложение, которое содержит каждую букву алфавита хотя бы один раз. Например, предложение «The quick brown fox jumps over the lazy dog» является панграммой, потому что в нем хотя бы один раз используются буквы A-Z (регистр не имеет значения). Дана строка, определить, является ли она панграммой. Верните True, если это так, False, если нет. Игнорируйте цифры и знаки препинания.
+*/
 
-  console.log(result);;
+function isPangram(string) {
+  string = string.replace(/[^a-zа-яё]/gi, '');
+  const alphabets = 'abcdefghijklmnopqrstuvwxyz'.split("");
+
+  return alphabets.every(x => string.toLowerCase().includes(x))
 }
 
-// expandedForm(12) // '10 + 2';
-// expandedForm(42) // '40 + 2';
-expandedForm(70304) // '70000 + 300 + 4';
+console.log(isPangram("Cwm fjord bank glyphs vext quiz")); // true;
